@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            /* place-items: center; */
+            align-items: center;
+            justify-self: center;
+            background-color: #111;
+        }
+
+        button {
+            position: relative;
+            padding: 10px 20px;
+            font-size: 30px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: none;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 10px;
+                z-index: -1;
+                /* color: aliceblue; */
+                mix-blend-mode: plus-lighter;
+                transition: transform 0.2s;
+            }
+
+            &::before {
+                background-color: #fb00ff;
+                transform: translate(-3px, -3px);
+            }
+
+            &::after {
+                background-color: #00ff4c;
+                transform: translate(3px, 3px);
+            }
+
+            &:hover {
+                &::before {
+                    transform: translate(3px, 3px);
+                }
+
+                &::after {
+                    transform: translate(-3px, -3px);
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button>click here</button>
+</body>
+
+</html>
